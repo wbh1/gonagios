@@ -28,6 +28,14 @@ type Result struct {
 	Msg      string
 }
 
+// NewResult creates a Nagios result with initial defaults
+func NewResult() *Result {
+	return &Result{
+		ExitCode: UNKNOWN,
+		Msg:      "<no output>",
+	}
+}
+
 func (e status) string() string {
 	returnCodes := []string{
 		"OK",
