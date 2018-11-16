@@ -58,6 +58,6 @@ func (e status) int() int {
 
 // Exit prints the Nagios status and message, then exits with the corresponding exit code
 func (nr *Result) Exit() {
-	fmt.Println(nr.ExitCode.string(), "—", nr.Msg)
+	fmt.Printf("%s: %s\n", nr.ExitCode.string(), nr.Msg)
 	os.Exit(nr.ExitCode.int())
 }
